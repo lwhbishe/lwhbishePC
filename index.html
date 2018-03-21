@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/app.css"/>
+    <link rel="stylesheet" href="css/lanBook.css"/>
+    <link rel="stylesheet" href="css/lanMessage.css"/>
+    <link rel="stylesheet" href="css/alert.css"/>
+    <link rel="stylesheet" href="css/bookClass.css"/>
+    <link rel="stylesheet" href="css/bookMessage.css"/>
+    <link rel="stylesheet" href="css/order.css"/>
+    <script src="lib/js/jquery.min.js"></script>
+    <script>
+        $(function(e){
+            var currentUser = JSON.parse(sessionStorage.getItem('current'));
+            if(currentUser == null){
+                location.href = "login.html";
+            }
+            else{
+                $('#currentUserName').text(currentUser.Name);
+            }
+        })
+
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top fudong">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand lwh-font" href="#">图书管理平台</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+
+                <li><a href="#" id="currentUserName"></a></li>
+                <li><a href="login.html">注销</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="Search...">
+            </form>
+        </div>
+    </div>
+</nav>
+<div class="left-nav">
+    <!--<a ui-sref='home' ui-sref-active="active">首页</a>-->
+    <a ui-sref='lanMessage' ui-sref-active="active">栏目信息管理模块</a>
+    <!--<a ui-sref='lanBook' ui-sref-active="active">栏目图书</a>-->
+    <a ui-sref='bookClass' ui-sref-active="active">图书分类管理模块</a>
+    <a ui-sref='bookMessage' ui-sref-active="active">图书信息管理模块</a>
+    <!--<a ui-sref='bookStorage' ui-sref-active="active">图书入库管理模块</a>-->
+    <a ui-sref='orderMessage' ui-sref-active="active">订单信息管理模块</a>
+</div>
+<div class="right-container">
+    <ui-view></ui-view>
+</div>
+<script src="lib/js/angular.min.js"></script>
+<script src="lib/js/angular-ui-router.min.js"></script>
+<script src="lib/js/angular-file-upload.min.js"></script>
+<script src="lib/js/angular-websocket.js"></script>
+<script src="lib/js/bootstrap.min.js"></script>
+<script src="js/services.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/directive.js"></script>
+<script src="js/filter.js"></script>
+<script src="js/factory.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

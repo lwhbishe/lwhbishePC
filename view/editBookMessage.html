@@ -1,0 +1,53 @@
+<div>
+    <div class="AddBookMessage-header">
+        <h1>编辑图书信息模块</h1>
+    </div>
+    <div class="AddBookMessage-container">
+
+        <span class="bookTitle">图书基本信息</span>
+        <div>
+            <label>图书编号</label>
+            <input type="hidden"/>
+        </div>
+        <div>
+            <label>图书ISBN</label>
+            <input type="text" ng-model="editMessage.isbn"/>
+        </div>
+        <div>
+            <label>图书名称</label>
+            <input type="text" ng-model="editMessage.name"/>
+        </div>
+        <div>
+            <label>出版日期</label>
+            <input type="text" ng-model="editMessage.publishDate"/>
+        </div>
+        <div>
+            <label>图书所属类别</label>
+            <select ng-model="editMessage.categoryId" ng-options="item.Name for item in addBookCate"></select>
+            <!--<select>-->
+            <!--<option value=""  ng-repeat="item in addBookCate" ng-model="addBookMessagePage.categoryId">{{item.Name}}</option>-->
+            <!--</select>-->
+        </div>
+        <div>
+            <label>图书所属出版社</label>
+            <select ng-model="editMessage.publisherId" ng-options="item.Name for item in addBookPub"></select>
+        </div>
+        <div>
+            <label>图书作者</label>
+            <select ng-model="editMessage.authorId" ng-options="item.Name for item in addAut"></select>
+        </div>
+        <div>
+            <label class="cover">图书封面</label>
+            <img ng-src="{{editMessage.image}}" alt=""/>
+            <input type="file" id="editBookCover"/>
+        </div>
+        <span>简介</span>
+        <div>
+            <textarea name="" id="" cols="30" rows="10" ng-model="editMessage.introduce"></textarea>
+        </div>
+        <button class="btn btn-success" ng-click="editBookSave()">提交</button>
+        <button class="btn btn-warning" ng-click="editBookBack()">返回上一页</button>
+    </div>
+
+
+</div>

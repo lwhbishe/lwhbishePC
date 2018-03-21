@@ -1,0 +1,19 @@
+<div class="bg" ng-show="state1">
+    <div class="bg1">
+        <div class="title">{{title}}</div>
+        <div class="mid">
+            <div>
+                <span>{{lanname}}</span>
+                <input type="text" ng-model="name.sectionName"/>
+            </div>
+            <div>
+                <span>{{youxianji}}</span>
+                <input type="text" ng-model="name.sectionPriority"/>
+            </div>
+        </div>
+        <div class="bottom">
+            <button class="alert-confrim1" ng-click="addSectionConfirm()">确认</button>
+            <button class="alert-cancel1" ng-click="addSectionCancel()">取消</button>
+        </div>
+    </div>
+</div>

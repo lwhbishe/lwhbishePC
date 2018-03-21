@@ -1,0 +1,39 @@
+<div>
+    <div class="AddBookMessage-header">
+        <h1>图书信息详情模块</h1>
+    </div>
+    <div class="editBookMessage-container">
+        <div>
+            <img ng-src="{{detailBook.Images}}" alt=""/>
+            <div>
+                <span>图书名称：{{detailBook.bookName}}</span>
+                <span>图书作者:{{detailBook.authorName}}</span>
+            </div>
+        </div>
+        <table class="table table-striped table-hover editBookMessage">
+            <tbody>
+                <tr>
+                    <td><span>图书名称:{{detailBook.bookName}}</span></td>
+                    <td><span>图书作者:{{detailBook.authorName}}</span></td>
+                </tr>
+                <tr>
+                    <td><span>图书类别:{{detailBook.categoryName}}</span></td>
+                    <td><span>图书出版社:{{detailBook.publisherName}}</span></td>
+                </tr>
+                <tr>
+                    <td><span>出版日期:{{detailBook.publishDate}}</span></td>
+                    <td><span>图书状态:{{detailBook.state}} (图书状态(1:下架;0:正常))</span></td>
+                </tr><tr>
+                    <td><span>库存总数:{{detailBook.amount}}本</span></td>
+                    <td><span>可借数量:{{detailBook.number}}本</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>简介</h3>
+        <div class="jj">
+            {{detailBook.Introduce}}
+        </div>
+    </div>
+    <button class="btn btn-warning" ng-click="detailBookBack()">返回上一页</button>
+
+</div>

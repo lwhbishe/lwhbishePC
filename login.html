@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="lib/css/bootstrap.css" >
+    <!--<link rel="stylesheet" href="lib/css/reset.css"/>-->
+    <link rel="stylesheet" href="css/login.css"/>
+</head>
+<body>
+<div class="container">
+    <div class="lwh-container">
+        <h1>图书管理平台</h1>
+
+        <form action="#" method="post">
+            <div class="form-group">
+                <input type="text" name="username" class="form-control lwh-input" id="username" placeholder="Username" autocomplete="off"/>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" class="form-control lwh-input" id="password" placeholder="Password" oncontextmenu="return false" onpaste="return false"  />
+            </div>
+            <button id="submit" type="button" class="btn btn-success lwh-btn">登录</button>
+        </form>
+        <div class="connect">
+            <p>If we can only encounter each other rather than stay with each other,then I wish we had never encountered.</p>
+            <p style="margin-top:20px;">如果只是遇见，不能停留，不如不遇见。</p>
+        </div>
+        <div class="alert" style="display:none">
+            <h2>消息</h2>
+            <div class="alert_con">
+                <p id="ts"></p>
+                <p style="line-height:70px"><a class="btn">确定</a></p>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="lib/js/jquery.min.js"></script>
+<script src="lib/js/bootstrap.js"></script>
+<script src="lib/js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<div>
+    <div class="lanMessage-header">
+        <h1>栏目信息模块</h1>
+    </div>
+
+
+    <div class="btn btn-info addNewSection" ng-click="addNewSection()">添加新栏目</div>
+
+    <table class="table table-striped table-hover lanMessageTable">
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>名称</th>
+                <th ng-click="sort()">优先级</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in section | orderBy:'Priority':true">
+                <td class="lanMessageFirst">{{$index+1}}</td>
+                <td class="lanMessageSecond">{{item.Name}}</td>
+                <td class="lanMessageThird">{{item.Priority}}</td>
+                <td class="lanMessageFouth">
+                    <button class="btn btn-success" ng-click="goDetail(item)">详情</button>
+                    <button class="btn btn-info" ng-click="goEdit(item)">编辑</button>
+                    <button class="btn btn-danger" ng-click="goDelete(item)" >删除</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <lwh-delete title="删除栏目" content="您确定要删除《{{deleteState.name}}》吗?" state2="stateDelete" onconfirm="delete_Confirm()"></lwh-delete>
+    <lwh-add-new-section lanname="栏目名称" youxianji="优先级" title="编辑栏目" state1="stateEdit" onconfirm="edit_Confim()" name="editData"></lwh-add-new-section>
+    <lwh-add-new-section lanname="栏目名称" youxianji="优先级" title="添加新栏目" state1="stateAddSection" onconfirm="add_Confim()" name="data"></lwh-add-new-section>
+</div>

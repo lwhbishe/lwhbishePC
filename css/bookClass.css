@@ -1,0 +1,29 @@
+.bookClass-header{
+    width:95%;
+    height: 80px;
+    border-bottom: 1px solid #ccc;
+}
+.bookClass-header>h1{
+    line-height: 80px;
+}
+.bookClassTable{
+    width:95%;
+}
+.categoryImg{
+    display: block;
+    width:50px;
+    height: 50px;
+}
+
+nav {
+    position: relative;
+    width:100%;
+    height: 50px;
+}
+.pagination {
+    position: absolute;
+    top: -30px;
+}
+nav li {
+    cursor: pointer;
+}

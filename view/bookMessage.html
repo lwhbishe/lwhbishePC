@@ -1,0 +1,83 @@
+<div>
+    <div class="bookMessage-header">
+        <h1>图书信息模块</h1>
+    </div>
+    <div class="secondContainer">
+        <div class="btn btn-info addBookMessage" ng-click="addBookMessage()">添加图书信息</div>
+        <select ng-model="bookcategory" ng-options="item.Name for item in bookCate" ng-change="booksCategory();"></select>
+        <select ng-model="bookpub" ng-options="item.Name for item in bookPublisher" ng-change="bookPub();"></select>
+        <!--<input type="text" placeholder="请输入关键字"/>-->
+        <input type="text" class="form-control keyinput" placeholder="请输入图书名称" ng-model="keyword"/>
+        <button class="btn btn-success addBookMessage"  ng-click="searchKey()">查询</button>
+    </div>
+
+    <table class="table table-striped table-hover bookMessageTable">
+        <thead>
+            <tr>
+                <th>序号</th>
+                <th>图书名称</th>
+                <th>图书作者</th>
+                <th>出版日期</th>
+                <th>封面</th>
+                <th>图书所属类别</th>
+                <th>图书所属出版社</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in tempArray | searchFilter: dataPage.pageSize : dataPage.pageIndex">
+                <td>{{$index+1}}</td>
+                <td>{{item.bookName}}</td>
+                <td>{{item.authorName}}</td>
+                <td>{{item.publishDate}}</td>
+                <td><img style="width:50px;height: 50px;" ng-src="{{item.Images}}" alt=""/></td>
+                <td>{{item.categoryName}}</td>
+                <td>{{item.publisherName}}</td>
+                <td>
+                    <button class="btn btn-success" ng-click="detailBookMessage(item)">详情</button>
+                    <button class="btn btn-info" ng-click="editBookMessage(item)">编辑</button>
+                    <button class="btn btn-warning" ng-click="putaway(item)">图书入库</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <li ng-repeat="num in dataPage.pages"><a ng-click="changePage(num);">{{num}}</a></li>
+        </ul>
+    </nav>
+    <!--<ul>-->
+        <!--<li ng-repeat="num in dataPage.pages">-->
+            <!--<button ng-click="changePage(num);">{{num}}</button>-->
+        <!--</li>-->
+    <!--</ul>-->
+    <div class="bg" ng-if="bookPut">
+        <div class="bg1">
+            <div class="title">图书入库</div>
+            <div class="mid">
+                <div>
+                    <span>图书名称</span>
+                    <span>{{bookPutAway.name}}</span>
+                </div>
+                <div>
+                    <span>库存总量</span>
+                    <span>{{bookPutAway.num}}本</span>
+                </div>
+                <div>
+                    <span>入库数量</span>
+                    <input type="text" ng-model="bookPutAway.count"/>
+                </div>
+                <div id="putDiv">
+                    <span id="putNumber">请输入图书数量</span>
+                </div>
+                <div id="putDiv1">
+                    <span id="putNumberNeed">请输入正确的数量并且入库数量不能小于1本</span>
+                </div>
+            </div>
+            <div class="bottom">
+                <button class="alert-confrim1" ng-click="putaway_onconfim()">确认</button>
+                <button class="alert-cancel1" ng-click="putaway_oncancel()">取消</button>
+            </div>
+        </div>
+    </div>
+</div>

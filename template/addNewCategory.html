@@ -1,0 +1,25 @@
+<div class="bg" ng-show="category">
+    <div class="bg-category">
+        <!--<form method="post" >-->
+        <div class="title">{{title}}</div>
+        <div class="mid-category">
+            <div>
+                <span>图标</span>
+                <img ng-src="{{name.icon}}" alt="" />
+                <input type="file" id="addFileUpLoad" />
+                <!--<image-upload file-model="category.icon" file-options="categoryOptions"></image-upload>-->
+                <!--<input ng-if="inputkuang.input2" type="file" id="editFileUpLoad" />-->
+            </div>
+            <div>
+                <span>分类名称</span>
+                <input type="text" ng-model="name.className"/>
+            </div>
+
+        </div>
+        <div class="bottom-category">
+            <button class="alert-confrim1" ng-click="categoryConfirm()">确认</button>
+            <button class="alert-cancel1" ng-click="categoryCancel()">取消</button>
+        </div>
+        <!--</form>-->
+    </div>
+</div>

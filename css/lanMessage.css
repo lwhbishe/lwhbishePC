@@ -1,0 +1,52 @@
+.lanMessage-header{
+    width:95%;
+    height: 80px;
+    border-bottom: 1px solid #ccc;
+}
+.lanMessage-header>h1{
+    line-height: 80px;
+}
+.lanMessageTable{
+    width:95%;
+}
+.lanMessageFirst{
+    width:10%;
+}
+.lanMessageSecond{
+    width:50%;
+}
+.lanMessageThird{
+    width:10%;
+}
+.lanMessageFouth{
+    width:30%;
+}
+.addNewSection{
+    margin-top: 20px;
+}
+.keyinput{
+    width: 250px;
+    float: left;
+    margin-top: 20px;
+}
+.secondContainer{
+    width:100%;
+    height: 50px;
+}
+.secondContainer>select{
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
+    width:200px;
+    height: 34px;
+    border-radius: 8px;
+    outline: none;
+}
+.secondContainer>input{
+    float: left;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.secondContainer>div{
+    float: left;
+}
